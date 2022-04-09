@@ -1,0 +1,11 @@
+﻿{
+  "Name": "SurvivalCraftMap",
+  "Version": "2.2.10",
+  "ApiVersion": "1.33",
+  "Description": "081311ZC",
+  "ScVersion": "2.2.10.4",
+  "Link": "fidax@qq.com",
+  "Author": "Suceru",
+  "PackageName": "cl.ctmpfidax",
+  "Dependencies": []
+}
