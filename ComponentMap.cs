@@ -22,6 +22,7 @@ namespace SurvivalCraftMap
         /// fidax@qq.com
         /// </summary>
         string Version = "SCMap.C.C1";
+
         int VersionNum = 84550;
         // 地图方块数半径
         private int mapRadius;
