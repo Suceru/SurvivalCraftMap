@@ -12,6 +12,17 @@ namespace SurvivalCraftMap
 
     public class ComponentMap : Component, IDrawable, IUpdateable
     {
+        /// <summary>
+        /// SCMap.[Version].@[Num]
+        /// @A=alpha
+        /// @B=Beta
+        /// @C=Release
+        /// @D=Debug
+        /// Suceru {*_*}
+        /// fidax@qq.com
+        /// </summary>
+        string Version = "SCMap.C.C1";
+        int VersionNum = 84550;
         // 地图方块数半径
         private int mapRadius;
         //地图缩放
@@ -57,6 +68,7 @@ namespace SurvivalCraftMap
             switch (m_componentPlayer.GameWidget.Input.IsKeyDownOnce(Engine.Input.Key.M) || this.mapButton.IsClicked)
             {
                 case true:
+                    Log.Information("Mini-MapMod Version:"+VersionNum);
                     MapType = !MapType;
                     return;
             }
@@ -253,7 +265,7 @@ namespace SurvivalCraftMap
                 case "Windows":
                 case "windows":
                     mapRadius = 100;
-                    MapScale = 1;
+                    MapScale = 0.5f;
                     RmapRadius = 0.30f;
                     break;
                 case "Android":

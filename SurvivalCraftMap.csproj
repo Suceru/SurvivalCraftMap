@@ -36,13 +36,16 @@
     </DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Engine">
+    <Reference Include="Engine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>DLLs\2.3API1.4\Engine.dll</HintPath>
     </Reference>
-    <Reference Include="EntitySystem">
+    <Reference Include="EntitySystem, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>DLLs\2.3API1.4\EntitySystem.dll</HintPath>
     </Reference>
-    <Reference Include="Survivalcraft">
+    <Reference Include="Survivalcraft, Version=2.3.41.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>DLLs\2.3API1.4\Survivalcraft.exe</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
@@ -52,5 +55,19 @@
     <Compile Include="Tool.cs" />
     <Compile Include="ComponentMap.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="config\Modinfo.json" />
+    <None Include="config\SurvivalCraftMap.xdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\SurvivalCraftMap.dll" />
+    <Content Include="DLLs\2.3API1.4\Engine.dll" />
+    <Content Include="DLLs\2.3API1.4\EntitySystem.dll" />
+    <Content Include="DLLs\2.3API1.4\Survivalcraft.exe" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /y "$(TargetDir)$(ProjectName).dll" "%25Survivalcraft2%25\Mods\"
+echo "%25Survivalcraft2%25\Mods\"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
